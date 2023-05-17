@@ -1,0 +1,119 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "unicefAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "multiSig",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "donator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "donatedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "Donated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "donationDetails",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "donator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "donatedAmount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fund",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FirstSmartContract.sol": "Donations"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FirstSmartContract.sol": {
+			"keccak256": "0xb3d73994c13722e1e4c537e49a272d9e5056d78f83570c3c3ce8f16932210504",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://849968e7230e60dfe1fc107b41565295c8c6f750130f88dae19b2c18afb4d2e5",
+				"dweb:/ipfs/QmZC53ipmbRasJnBRcguDtoJwctVUQH8dQfFTZYNVs1WuH"
+			]
+		}
+	},
+	"version": 1
+}

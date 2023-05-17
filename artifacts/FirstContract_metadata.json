@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FirstSmartContract.sol": "FirstContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FirstSmartContract.sol": {
+			"keccak256": "0xc1f9d0d65a1151fc688173aa005083d7de658b9f997584c1f4ed592fa7a23c9a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://27249003e1a300170a0e3ef0218e29d5ef2cd7efbc9fb1d9b88c3d61bf303171",
+				"dweb:/ipfs/Qmb8sJu4B6KcHxTcsjgGFkUu99y1S5nihaJJh5UghZi6V1"
+			]
+		}
+	},
+	"version": 1
+}
