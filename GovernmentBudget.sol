@@ -2,44 +2,36 @@
 pragma solidity ^0.8.0;
 
 contract Budget {  
-    //testnet - ima isto blockchain to je ethereum fondacija necentralizovan i sluzi za testiranje
-    //dobar je za testiranje aplikacije
-    //moze da bude dobar za testiranje klijenta
-    //blockchain bez para
-     enum TaxPayerType{ PHYSICAL_ENTITY, LEGAL_ENTITY }
 
     struct TaxPayer {
-        uint256 taxAmount; //uint256 je najjeftiniji od svih ostalih --32 bytes
+        uint256 taxAmount; //uint256 je najjeftiniji od svih ostalih --32 bytes       
+        uint256 vote;   // index of the voted proposals
         TaxPayerType taxPayerType;
         bool voted;  // if true, that person already voted
-        uint vote;   // index of the voted proposals
+        bool isValid; //0- active  --- 1- non-active
     }
 
     address immutable government;
     address immutable adminMultisig;
+
+    enum TaxPayerType{ PHYSICAL_ENTITY, LEGAL_ENTITY }
+
     constructor(address governmentAddress, address multiSig) {
         government = governmentAddress;
         adminMultisig = multiSig;
     }
 
-    modifier  onlyAdmin(){
+    modifier onlyAdmin(){
         require(msg.sender == government,"Error: Only Admin Can Call");
         _;
     }
-    //petlja nevalja jer se uvek cita iz stack-a i to je mnogo kolicina gasa se trosi
 
-    //hash funkcija bolje je da se koristi
     mapping(address => TaxPayer) public taxPayerMap;
 
-    //cuvamo u logove a nije bitno za chain- ne cuva se na chain-u
-    event TaxPayed(address donator, uint256 taxAmount);
+    event TaxPayed(address TaxPayer, uint256 taxAmount);
 
-    //fund - anyone can call
     function fund() external payable {
-        //msg.sender
-        //msg.value 
         taxPayerMap[msg.sender].taxAmount += msg.value;
-
         emit TaxPayed(msg.sender, msg.value);
     }
     //struct - slozeni podatak
