@@ -27,7 +27,7 @@
 					{
 						"indexed": false,
 						"internalType": "address",
-						"name": "donator",
+						"name": "TaxPayer",
 						"type": "address"
 					},
 					{
@@ -39,6 +39,24 @@
 				],
 				"name": "TaxPayed",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "taxPayerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Budget.TaxPayerType",
+						"name": "taxPayerType",
+						"type": "uint8"
+					}
+				],
+				"name": "addTaxPayer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -81,6 +99,11 @@
 						"type": "uint256"
 					},
 					{
+						"internalType": "uint256",
+						"name": "vote",
+						"type": "uint256"
+					},
+					{
 						"internalType": "enum Budget.TaxPayerType",
 						"name": "taxPayerType",
 						"type": "uint8"
@@ -91,9 +114,14 @@
 						"type": "bool"
 					},
 					{
-						"internalType": "uint256",
-						"name": "vote",
-						"type": "uint256"
+						"internalType": "bool",
+						"name": "isValid",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "exists",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -113,7 +141,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"FirstSmartContract.sol": "Budget"
+			"GovernmentBudget.sol": "Budget"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -127,12 +155,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"FirstSmartContract.sol": {
-			"keccak256": "0x0bfdad9f9a7f89122662240aecda8d8a3d38635703a3b6b511bd7e07593fae57",
+		"GovernmentBudget.sol": {
+			"keccak256": "0xe7157fb9f35ee9a5e41e7c0d65e745034a632ab3d12ff21b68fe7ce5500a7c8f",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://cdc7c43260c9ee28f1c6d709b1af27cc9a0b20a0ef4bae8302bf781bf59c27c3",
-				"dweb:/ipfs/QmW3jTc4626HK597BoLwwY5HY8hqZwKCxXe86Fgue4Pm8P"
+				"bzz-raw://ec8577821609d93182870fe86890f5af4f4ceaf96642ee3f55291d74bdec14c6",
+				"dweb:/ipfs/QmVqUxq6FJzEwEnKKCNc5emW4RCgWF6tZ7jiAvhPk8fxFM"
 			]
 		}
 	},

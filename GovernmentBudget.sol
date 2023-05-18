@@ -9,6 +9,7 @@ contract Budget {
         TaxPayerType taxPayerType;
         bool voted;  // if true, that person already voted
         bool isValid; //0- active  --- 1- non-active
+        bool exists;
     }
 
     address immutable government;
@@ -47,6 +48,13 @@ contract Budget {
         require(address(this).balance >= amount, "Insufficient balance in the contract");
         
         receiver.transfer(amount);
+    }
+
+
+    function addTaxPayer(address taxPayerAddress, TaxPayerType taxPayerType) public onlyAdmin {
+        require(!taxPayerMap[taxPayerAddress].exists, "Tax payer address already exists in map");        
+        taxPayerMap[taxPayerAddress].taxPayerType = taxPayerType;
+        taxPayerMap[taxPayerAddress].exists = true;
     }
 
 }
